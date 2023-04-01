@@ -31,13 +31,7 @@ public class AviaSouls {
             }
         }
         Arrays.sort(result);
-        if (result.length > 0) {
-            return result;
-        } else {
-            throw new NotFoundException(
-                    "Билеты не найдены."
-            );
-        }
+        return result;
     }
 
     public Ticket[] searchAndSortBy(String from, String to, Comparator<Ticket> comparator) {
@@ -50,12 +44,6 @@ public class AviaSouls {
             }
         }
         Arrays.sort(result, comparator);
-        if (result.length > 0) {
-            return result;
-        } else {
-            throw new NotFoundException(
-                    "Билеты не найдены."
-            );
-        }
+        return result;
     }
 }

@@ -72,10 +72,11 @@ public class AviaSoulsTest {
     }
 
     @Test
-    public void exceptionIfNotFound() {
-        Assertions.assertThrows(NotFoundException.class, () -> {
-            manager.search("Каир", "Москва");
-        });
+    public void nothingFound() {
+        Ticket[] expected = {};
+        Ticket[] actual = manager.search("Санкт-Петербург", "Каир");
+
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
